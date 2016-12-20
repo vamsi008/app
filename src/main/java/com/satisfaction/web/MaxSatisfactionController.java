@@ -1,36 +1,37 @@
-package app;
+package com.satisfaction.web;
+
+import java.io.IOException;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import app.service.AppService;
+import com.satisfaction.service.MaxSatisfactionService;
 
 @RestController
-@EnableAutoConfiguration
-@ComponentScan
-public class App {
+public class MaxSatisfactionController {
 
 	@Autowired
-	AppService appService;
+	MaxSatisfactionService appService;
 
-	@RequestMapping("/")
-	String home() {
-		return "Max Calorie Code.";
+	@RequestMapping("/greetings")
+	public String listUploadedFiles(Model model) throws IOException {
+
+		//model.addAttribute("files", "sample");
+
+		return "uploadForm";
 	}
 
 	/**
 	 * @param file
 	 * @return Max
 	 */
-	@PostMapping("/maxCalories")
-	public String calMaxCalorie(@RequestParam("file") MultipartFile file) {
+	@PostMapping("/maxSatisfaction")
+	public String calMaxSatisfaction(@RequestParam("file") MultipartFile file) {
 
 		Integer maxCalories = new Integer(0);
 
@@ -50,7 +51,7 @@ public class App {
 					time[i] = Integer.valueOf(columns[1]);
 				}
 
-				maxCalories = appService.knapSack(totalTime, time, cal, itemsCount);
+				maxCalories = appService.maxSatisfactionCalculator(totalTime, time, cal, itemsCount);
 
 			} catch (Exception e) {
 
@@ -59,10 +60,6 @@ public class App {
 			}
 		}
 		return maxCalories.toString();
-	}
-
-	public static void main(String[] args) throws Exception {
-		SpringApplication.run(App.class, args);
 	}
 
 }

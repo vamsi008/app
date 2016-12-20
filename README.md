@@ -11,6 +11,9 @@
 
 Solved this problem based on the 0-1 knapsack problem where the constrain is time (in this case). And the result would be the maximum satisfaction.
 
+**OUTPUT**
+The output for the sample data.txt file that is provided is :: ***2493893***
+
 
 **Development**
 The solution is developed in  SpringBoot with TDD.
@@ -29,4 +32,10 @@ URI::/maxCalories
 params: file (Multipartfile).
 
 Refer to the test cases .
+
+**Welcome Page**
+
+The welcome page will contain the input to upload the ***sample data file*** and  get the output.
+
+
 

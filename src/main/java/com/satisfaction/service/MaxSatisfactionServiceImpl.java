@@ -1,12 +1,12 @@
-package app.service;
+package com.satisfaction.service;
 
 import org.springframework.stereotype.Service;
 
 @Service
-public class AppServiceImpl implements AppService {
+public class MaxSatisfactionServiceImpl implements MaxSatisfactionService {
 
 	@Override
-	public int knapSack(int totalTime, int[] time, int[] cal, int itemsCount) {
+	public int maxSatisfactionCalculator(int totalTime, int[] time, int[] cal, int itemsCount) {
 
 		int i, w;
 		int result[][] = new int[itemsCount + 1][totalTime + 1];

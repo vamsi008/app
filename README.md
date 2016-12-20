@@ -28,7 +28,8 @@ The solution is developed in  SpringBoot with TDD.
 the application would be up and running on localhost:8080
 **API CALL**
 Type:: POST
-URI::/maxCalories
+URI::/maxSatisfaction
+
 params: file (Multipartfile).
 
 Refer to the test cases .

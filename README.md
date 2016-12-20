@@ -36,6 +36,8 @@ Refer to the test cases .
 
 **Welcome Page**
 
+![alt tag](https://github.com/vamsi008/app/blob/master/repo_img.png)
+
 The welcome page will contain the input to upload the ***sample data file*** and  get the output.
 
 
